@@ -1,3 +1,16 @@
+<div *ngIf="usuario && !cargando; else showLogin">
 
+  <!-- Muestro el componente encabezado una vez esté logueado -->
+  <app-encabezado></app-encabezado>
+  <router-outlet></router-outlet>
 
-<router-outlet></router-outlet>
+  <button (click)="logout()" class="btn btn-warning">Logout</button>
+</div>
+<ng-template #showLogin>
+  <div *ngIf="cargando" class='text-center' style="margin-top: 10px;">
+    <div class="lds-ripple text-center"><div></div><div></div></div>
+    <br>
+    <img src="./../assets/img/loading-280x210px.gif" alt="">
+  </div>
+  <app-login *ngIf="!cargando"></app-login>
+</ng-template>
