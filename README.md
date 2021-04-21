@@ -5,7 +5,40 @@ Sistema para Administracion de Gimnasio Online, y servicio APP
 npm install
 ```
 
-Proyecto generado con [Angular CLI](https://github.com/angular/angular-cli) version 11.2.6.
+# Firebase
+Crear una cuenta en https://firebase.google.com/
+
+```
+https://github.com/angular/angularfire
+https://github.com/angular/angularfire/blob/master/docs/install-and-setup.md
+```
+
+# Configuración del Environment en el Proyecto Angular (Datos extraidos de la config de fireBase)
+
+```
+export const environment = {
+  production: false,
+  firebase: {
+    apiKey: "",
+    authDomain: "proyecto.firebaseapp.com",
+    projectId: "proyecto",
+    storageBucket: "proyecto.appspot.com",
+    messagingSenderId: "0000000000000",
+    appId: "1:663874558011:web:0000000000000"
+  }
+};
+```
+
+# EXTRAS
+https://www.npmjs.com/package/bootstrap
+https://valor-software.com/ngx-bootstrap
+https://sweetalert2.github.io/
+https://getbootstrap.com/docs/4.6/
+https://www.npmjs.com/package/ngx-spinner
+https://napster2210.github.io/ngx-spinner/
+
+
+## Proyecto generado con [Angular CLI](https://github.com/angular/angular-cli) version 11.2.6.
 
 ## Development server
 
