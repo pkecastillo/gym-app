@@ -1,0 +1,49 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-sm-6">
+      <h4>Packs</h4>
+      <ul class="list-group list-group-flush">
+        <li *ngFor="let precio of precios" class="list-group-item" (click)="editarPrecio(precio)">
+          <a style="color: red;">{{precio.nombre}}</a>
+      </ul>
+    </div>
+    <div class="col-sm-2">
+      <h4>Costos</h4>
+      <ul class="list-group list-group-flush">
+        <li *ngFor="let precio of precios" class="list-group-item" (click)="editarPrecio(precio)">
+          <a style="color: red;">{{precio.costo | currency: '€'}}</a>
+      </ul>
+    </div>
+
+
+    <div class="col-sm-4">
+      <h4>Agregar/Editar</h4>
+      <form [formGroup]="formularioPrecio">
+        <div class="form-group">
+          <label for="">Nombre</label>
+          <input type="text" formControlName="nombre" class="form-control" placeholder="Ingresar precio nombre">
+        </div>
+        <div class="form-group">
+          <label for="">Costo</label>
+          <input type="number" formControlName="costo" class="form-control" placeholder="Ingresar costo">
+        </div>
+        <div class="form-group">
+          <label for="">Cantidad</label>
+          <input type="number" formControlName="duracion" class="form-control" placeholder="Ingresar duracion">
+        </div>
+        <div class="form-group">
+          <label for="">Duración tiempo</label>
+          <select name="" formControlName="tipoDuracion" class="form-control">
+            <option value="1">Dia</option>
+            <option value="2">Semana</option>
+            <option value="3">Quincena</option>
+            <option value="4">Mes</option>
+            <option value="5">Año</option>
+          </select>
+        </div>
+          <button *ngIf="!esEditable" [disabled]="formularioPrecio.invalid" class="btn btn-primary" (click)="agregar()">Agregar</button>
+          <button *ngIf="esEditable" [disabled]="formularioPrecio.invalid" class="btn btn-warning" (click)="editar()">Editar</button>
+      </form>
+    </div>
+  </div>
+</div>

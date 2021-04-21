@@ -1,0 +1,24 @@
+<div class='container mt-5'>
+  <h4>Listado de clientes</h4>
+
+  <form>
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="Busque un cliente">
+    </div>
+  </form>
+  <!-- JALAR INFO DE FIREBASE -->
+  <div class='row'>
+    <div class='col-sm-3' *ngFor="let cliente of clientes">
+      <div class="card">
+        <img src="{{cliente.imgUrl}}" class="card-img-top imgCliente">
+        <div class="card-body">
+          <p> {{cliente.id}} </p>
+          <h5 class="card-title">{{cliente.nombre}} {{cliente.apellido}}</h5>
+          <!-- USO DEL REOUTER_LINK de ANGULAR  PARA PASAR PARAMETROS-->
+          <a [routerLink]="['/agregar-cliente/', cliente.id]" class="card-link">Editar</a>
+          <a class="card-link text-danger">Desactivar</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
